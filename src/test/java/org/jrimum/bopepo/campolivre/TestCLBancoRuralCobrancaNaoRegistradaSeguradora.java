@@ -32,7 +32,7 @@ public class TestCLBancoRuralCobrancaNaoRegistradaSeguradora extends AbstractCam
 
 
 		titulo.getContaBancaria().setBanco(BancosSuportados.BANCO_RURAL.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(155, "1"));
+		titulo.getContaBancaria().setAgencia(new Agencia("155", "1"));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(1625462,"9"));
 		titulo.getContaBancaria().setCarteira(new Carteira(101, TipoDeCobranca.SEM_REGISTRO));
 		titulo.setNossoNumero("0000022569");

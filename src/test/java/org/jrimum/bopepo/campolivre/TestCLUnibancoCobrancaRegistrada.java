@@ -104,7 +104,7 @@ public class TestCLUnibancoCobrancaRegistrada extends AbstractCampoLivreBaseTest
 		
 
 		titulo.getContaBancaria().setBanco(BancosSuportados.UNIBANCO.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(1, "9"));
+		titulo.getContaBancaria().setAgencia(new Agencia("1", "9"));
 		titulo.getContaBancaria().setCarteira(new Carteira(123,TipoDeCobranca.COM_REGISTRO));
 		titulo.setNumeroDoDocumento("1234567");
 		titulo.setNossoNumero("11223344554");

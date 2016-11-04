@@ -62,7 +62,7 @@ public class TestCLBancoDeBrasilia extends AbstractCampoLivreBaseTest<CLBancoDeB
 		titulo.getContaBancaria().setBanco(
 				BancosSuportados.BANCO_DE_BRASILIA.create());
 		
-		titulo.getContaBancaria().setAgencia(new Agencia(58));
+		titulo.getContaBancaria().setAgencia(new Agencia("58"));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(6002006));
 		titulo.getContaBancaria().setCarteira(new Carteira(1,TipoDeCobranca.SEM_REGISTRO));
 		titulo.setNossoNumero("000001");
@@ -109,7 +109,7 @@ public class TestCLBancoDeBrasilia extends AbstractCampoLivreBaseTest<CLBancoDeB
 	@Test(expected = CampoLivreException.class)
 	public void seNaoPermiteNumeroDaAgenciaAcimaDe3Digitos() {
 
-		testeSeNaoPermiteNumeroDaAgenciaComDigitosAcimaDoLimite(1000);
+		testeSeNaoPermiteNumeroDaAgenciaComDigitosAcimaDoLimite("1000");
 	}
 	
 	@Test(expected = CampoLivreException.class)

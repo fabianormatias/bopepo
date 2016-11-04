@@ -60,7 +60,7 @@ public class TestCLBanrisulCobrancaRegistrada extends AbstractCampoLivreBaseTest
 
 		titulo.getContaBancaria().setBanco(BancosSuportados.BANCO_DO_ESTADO_DO_RIO_GRANDE_DO_SUL.create());
 		titulo.getContaBancaria().setCarteira(new Carteira(1, TipoDeCobranca.COM_REGISTRO));
-		titulo.getContaBancaria().setAgencia(new Agencia(1102));
+		titulo.getContaBancaria().setAgencia(new Agencia("1102"));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(9000150));
 		titulo.setNossoNumero("22832563");
 
@@ -100,7 +100,7 @@ public class TestCLBanrisulCobrancaRegistrada extends AbstractCampoLivreBaseTest
 	@Test(expected=CampoLivreException.class)
 	public void criacaoAgenciaComCodigoMaiorQue4Digitos() {
 		
-		titulo.getContaBancaria().setAgencia(new Agencia(10000, "1"));
+		titulo.getContaBancaria().setAgencia(new Agencia("10000", "1"));
 		CampoLivreFactory.create(titulo);
 	}
 	

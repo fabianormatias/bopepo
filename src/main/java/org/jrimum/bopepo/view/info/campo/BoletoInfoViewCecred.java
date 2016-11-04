@@ -67,12 +67,12 @@ public class BoletoInfoViewCecred extends AbstractBoletoInfoCampoView {
 	}
 
 	private String getAgenciaCodigoCedente(){
-		Integer agencia = super.getBoleto().getTitulo().getContaBancaria().getAgencia().getCodigo();
+		String agencia = super.getBoleto().getTitulo().getContaBancaria().getAgencia().getCodigo();
 		String agDv = super.getBoleto().getTitulo().getContaBancaria().getAgencia().getDigitoVerificador();
 		Integer numeroDaConta = super.getBoleto().getTitulo().getContaBancaria().getNumeroDaConta().getCodigoDaConta();
 		String contaDv = super.getBoleto().getTitulo().getContaBancaria().getNumeroDaConta().getDigitoDaConta();
 		
-		return String.format("%04d-%s / %07d-%s", agencia, agDv, numeroDaConta, contaDv);
+		return String.format("%s-%s / %07d-%s", agencia, agDv, numeroDaConta, contaDv);
 	}
 
 }

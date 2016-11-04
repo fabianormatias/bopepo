@@ -218,7 +218,7 @@ class CLSicredi extends AbstractCLSicredi {
 		this.add(FIELD_CARTEIRA);
 		this.add(new FixedField<String>(titulo.getNossoNumero(), 8, Fillers.ZERO_LEFT));
 		this.add(new FixedField<String>(titulo.getDigitoDoNossoNumero(), 1, Fillers.ZERO_LEFT));
-		this.add(new FixedField<Integer>(titulo.getContaBancaria().getAgencia().getCodigo(), 4, Fillers.ZERO_LEFT));
+		this.add(new FixedField<String>(titulo.getContaBancaria().getAgencia().getCodigo(), 4, Fillers.ZERO_LEFT));
 		this.add(new FixedField<Integer>(titulo.getParametrosBancarios().<Integer>getValor(POSTO_DA_AGENCIA), 2, Fillers.ZERO_LEFT));
 		this.add(new FixedField<Integer>(titulo.getContaBancaria().getNumeroDaConta().getCodigoDaConta(), 5, Fillers.ZERO_LEFT));
 		

@@ -114,7 +114,7 @@ class CLCaixaEconomicaFederalSICOBNossoNumero10 extends AbstractCLCaixaEconomica
 		
 		this.add(new FixedField<String>(titulo.getNossoNumero(), 10));
 	
-		this.add(new FixedField<Integer>(titulo.getContaBancaria().getAgencia().getCodigo(), 4, Fillers.ZERO_LEFT));
+		this.add(new FixedField<String>(titulo.getContaBancaria().getAgencia().getCodigo(), 4, Fillers.ZERO_LEFT));
 		
 		if(titulo.getParametrosBancarios().contemComNome(CODIGO_OPERACAO)){
 			
@@ -180,6 +180,7 @@ class CLCaixaEconomicaFederalSICOBNossoNumero10 extends AbstractCLCaixaEconomica
 	 * @param codigoDaCarteira
 	 *            - Código da carteira
 	 */
+	@SuppressWarnings("unused")
 	private void checkPadraoNossoNumeroPorCodigoDaCarteira(String nossoNumero, Integer codigoDaCarteira){
 		switch (codigoDaCarteira) {
 		case 11:

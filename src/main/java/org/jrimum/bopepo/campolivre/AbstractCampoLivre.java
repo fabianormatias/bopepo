@@ -484,7 +484,7 @@ abstract class AbstractCampoLivre extends BlockOfFields implements CampoLivre {
 		
 		Objects.checkNotNull(titulo.getContaBancaria().getAgencia().getCodigo(), "Código da agência bancária não pode ser nulo!");
 		
-		boolean expression = titulo.getContaBancaria().getAgencia().getCodigo() > 0; 
+		boolean expression = Integer.parseInt(titulo.getContaBancaria().getAgencia().getCodigo()) > 0; 
 		
 		Objects.checkArgument(expression, format("Código da agência bancária deve ser um número inteiro natural positivo e não [%s].",titulo.getContaBancaria().getAgencia().getCodigo()));
 	}
@@ -504,7 +504,7 @@ abstract class AbstractCampoLivre extends BlockOfFields implements CampoLivre {
 	 */
 	protected final static void checkCodigoDaAgenciaMenorOuIgualQue(Titulo titulo, int limite){
 
-		boolean expression = titulo.getContaBancaria().getAgencia().getCodigo() <= limite;
+		boolean expression = Integer.parseInt(titulo.getContaBancaria().getAgencia().getCodigo()) <= limite;
 		
 		Objects.checkArgument(expression , format("Código [%s] da agência deve ser um número menor que ou igual a [%s].", titulo.getContaBancaria().getAgencia().getCodigo(), limite));
 	}

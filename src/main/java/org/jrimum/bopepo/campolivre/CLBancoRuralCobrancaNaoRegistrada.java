@@ -100,7 +100,7 @@ class CLBancoRuralCobrancaNaoRegistrada extends AbstractCLBancoRural{
 		super(FIELDS_LENGTH);
 		
 		this.add( new FixedField<Integer>( TIPO_COBRANCA , 1 ) );
-		this.add( new FixedField<Integer>( titulo.getContaBancaria().getAgencia().getCodigo(), 3 , Fillers.ZERO_LEFT ) );
+		this.add( new FixedField<String>( titulo.getContaBancaria().getAgencia().getCodigo(), 3 , Fillers.ZERO_LEFT ) );
 		this.add( new FixedField<Integer>(titulo.getParametrosBancarios().<Integer>getValor(CODIGO_REDUZIDO), 3, Fillers.ZERO_LEFT ) );
 		this.add( new FixedField<String>( titulo.getNossoNumero(), 15 , Fillers.ZERO_LEFT ) );
 		this.add( new FixedField<String>( ZEROS, 3));

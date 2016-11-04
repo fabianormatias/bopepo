@@ -21,7 +21,7 @@ public class TestCLBancoIntermedium extends AbstractCampoLivreBaseTest<CLBancoIn
 	public void setUp(){
 
 		titulo.getContaBancaria().setBanco(BancosSuportados.BANCO_INTEMEDIUM.create());
-		titulo.getContaBancaria().setAgencia( new Agencia(54, "0"));
+		titulo.getContaBancaria().setAgencia( new Agencia("54", "0"));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(149666,"6"));
 		titulo.getContaBancaria().setCarteira(new Carteira(5));
 		titulo.setNossoNumero("5611002");

@@ -62,7 +62,7 @@ public class TestCLSicredi extends AbstractCampoLivreBaseTest<CLSicredi> {
 	public void setUp(){
 
 		titulo.getContaBancaria().setBanco(BancosSuportados.BANCO_SICREDI.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(165));
+		titulo.getContaBancaria().setAgencia(new Agencia("165"));
 		titulo.getContaBancaria().setCarteira(new Carteira(1, TipoDeCobranca.SEM_REGISTRO));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(623));
 		titulo.setNossoNumero("07200003");
@@ -178,7 +178,7 @@ public class TestCLSicredi extends AbstractCampoLivreBaseTest<CLSicredi> {
 	@Test(expected = CampoLivreException.class)
 	public void seNaoPermiteNumeroDaAgenciaAcimaDe4Digitos() {
 
-		testeSeNaoPermiteNumeroDaAgenciaComDigitosAcimaDoLimite(10000);
+		testeSeNaoPermiteNumeroDaAgenciaComDigitosAcimaDoLimite("10000");
 	}
 	
 	@Test(expected = CampoLivreException.class)

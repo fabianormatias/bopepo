@@ -56,7 +56,7 @@ public class TestCLBancoDoBrasilNN11 extends AbstractCampoLivreBaseTest<CLBancoD
 	public void setUp(){
 		
 		titulo.getContaBancaria().setBanco(BancosSuportados.BANCO_DO_BRASIL.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(1234, "1"));
+		titulo.getContaBancaria().setAgencia(new Agencia("1234", "1"));
 		titulo.getContaBancaria().setCarteira(new Carteira(5));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(6789));
 		titulo.setNossoNumero("12345678901");		

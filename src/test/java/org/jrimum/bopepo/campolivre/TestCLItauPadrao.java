@@ -60,7 +60,7 @@ public class TestCLItauPadrao extends AbstractCampoLivreBaseTest<CLItauPadrao> {
 	public void setUp(){
 		
 		titulo.getContaBancaria().setBanco(BancosSuportados.BANCO_ITAU.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(57, "1"));
+		titulo.getContaBancaria().setAgencia(new Agencia("57", "1"));
 		titulo.getContaBancaria().setCarteira(new Carteira(110));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(12345));
 		titulo.setNumeroDoDocumento("1234567");

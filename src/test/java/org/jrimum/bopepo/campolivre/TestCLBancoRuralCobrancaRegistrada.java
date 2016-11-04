@@ -25,7 +25,7 @@ public class TestCLBancoRuralCobrancaRegistrada extends AbstractCampoLivreBaseTe
 	public void setUp(){
 		
 		titulo.getContaBancaria().setBanco(BancosSuportados.BANCO_RURAL.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(133, "1"));
+		titulo.getContaBancaria().setAgencia(new Agencia("133", "1"));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(6789,"1"));
 		titulo.getContaBancaria().setCarteira(new Carteira(5,TipoDeCobranca.COM_REGISTRO));
 		titulo.setNossoNumero("1234567");

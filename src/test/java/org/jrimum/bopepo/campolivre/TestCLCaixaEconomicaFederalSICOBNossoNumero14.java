@@ -56,7 +56,7 @@ public class TestCLCaixaEconomicaFederalSICOBNossoNumero14 extends AbstractCampo
 	public void setUp(){
 
 		titulo.getContaBancaria().setBanco(BancosSuportados.CAIXA_ECONOMICA_FEDERAL.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(255, "5"));
+		titulo.getContaBancaria().setAgencia(new Agencia("255", "5"));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(78));
 		titulo.getContaBancaria().setCarteira(new Carteira(8));
 		titulo.setNossoNumero("00000000113732");
@@ -111,7 +111,7 @@ public class TestCLCaixaEconomicaFederalSICOBNossoNumero14 extends AbstractCampo
 	@Test(expected = CampoLivreException.class)
 	public void seNaoPermiteNumeroDaAgenciaAcimaDe4Digitos() {
 
-		testeSeNaoPermiteNumeroDaAgenciaComDigitosAcimaDoLimite(10000);
+		testeSeNaoPermiteNumeroDaAgenciaComDigitosAcimaDoLimite("10000");
 	}
 	
 	@Test(expected = CampoLivreException.class)

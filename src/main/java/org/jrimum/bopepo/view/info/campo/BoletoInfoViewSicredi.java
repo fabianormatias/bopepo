@@ -114,7 +114,7 @@ public class BoletoInfoViewSicredi extends AbstractBoletoInfoCampoView{
 	}
 
 	private String getAgenciaCodigoCedente(){
-		Integer agencia = super.getBoleto().getTitulo().getContaBancaria().getAgencia().getCodigo();
+		String agencia = super.getBoleto().getTitulo().getContaBancaria().getAgencia().getCodigo();
 		Integer posto = super.getBoleto().getTitulo().getParametrosBancarios().getValor(ParametroBancoSicredi.POSTO_DA_AGENCIA);
 		Integer codigoCedente = super.getBoleto().getTitulo().getContaBancaria().getNumeroDaConta().getCodigoDaConta();
 		

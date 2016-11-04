@@ -71,7 +71,7 @@ public class TestCLUnibancoCobrancaNaoRegistrada extends AbstractCampoLivreBaseT
 		titulo.getContaBancaria().setBanco(BancosSuportados.UNIBANCO.create());
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(123456, "1"));
 		titulo.getContaBancaria().setCarteira(new Carteira(123, TipoDeCobranca.SEM_REGISTRO));
-		titulo.getContaBancaria().setAgencia(new Agencia(01234, "1"));
+		titulo.getContaBancaria().setAgencia(new Agencia("01234", "1"));
 		titulo.setNumeroDoDocumento("1234567");
 		titulo.setNossoNumero("11223344556677");
 		titulo.setDigitoDoNossoNumero("7");

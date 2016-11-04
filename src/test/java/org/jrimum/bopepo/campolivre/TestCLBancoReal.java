@@ -56,7 +56,7 @@ public class TestCLBancoReal extends AbstractCampoLivreBaseTest<CLBancoReal> {
 	public void setUp(){
 		
 		titulo.getContaBancaria().setBanco(BancosSuportados.BANCO_ABN_AMRO_REAL.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(1018));
+		titulo.getContaBancaria().setAgencia(new Agencia("1018"));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(16324));
 		titulo.setNumeroDoDocumento("1234567890123");
 		titulo.setNossoNumero("1234567890123");

@@ -145,7 +145,7 @@ class CLItauPadrao extends AbstractCLItau {
 									conta.getCarteira().getCodigo(), 
 									titulo.getNossoNumero()), 1));
 		
-		this.add(new FixedField<Integer>(conta.getAgencia().getCodigo(), 4, Fillers.ZERO_LEFT));
+		this.add(new FixedField<String>(conta.getAgencia().getCodigo(), 4, Fillers.ZERO_LEFT));
 		this.add(new FixedField<Integer>(conta.getNumeroDaConta().getCodigoDaConta(), 5, Fillers.ZERO_LEFT));
 		
 		this.add(new FixedField<Integer>(calculeDigitoDaPosicao41(
@@ -213,8 +213,7 @@ class CLItauPadrao extends AbstractCLItau {
 	 * 
 	 * @since 0.2
 	 */
-	private Integer calculeDigitoDaPosicao31(Integer codigoDaAgencia,
-			Integer codigoDaConta, Integer codigoDaCarteira, String nossoNumero) {
+	private Integer calculeDigitoDaPosicao31(String codigoDaAgencia, Integer codigoDaConta, Integer codigoDaCarteira, String nossoNumero) {
 
 		// Carteiras "exceção".
 		Integer[] carteirasEscriturais = {104, 105, 112, 113, 114, 147, 166, 212};
@@ -233,7 +232,7 @@ class CLItauPadrao extends AbstractCLItau {
 		    && Arrays.binarySearch(carteirasEscriturais, codigoDaCarteira) < 0) {
 			
 			campo.insert(0, Fillers.ZERO_LEFT.fill(codigoDaConta.intValue(), 5));
-			campo.insert(0, Fillers.ZERO_LEFT.fill(codigoDaAgencia.intValue(), 4));
+			campo.insert(0, Fillers.ZERO_LEFT.fill(codigoDaAgencia, 4));
 		}
 		
 		return calculeDigitoVerificador(campo.toString());
@@ -272,11 +271,10 @@ class CLItauPadrao extends AbstractCLItau {
 	 * 
 	 * @since 0.2
 	 */
-	private Integer calculeDigitoDaPosicao41(Integer codigoDaAgencia,
-			Integer codigoDaConta) {
+	private Integer calculeDigitoDaPosicao41(String codigoDaAgencia, Integer codigoDaConta) {
 
 		StringBuilder campo = new StringBuilder();
-		campo.append(Fillers.ZERO_LEFT.fill(codigoDaAgencia.intValue(), 4));
+		campo.append(Fillers.ZERO_LEFT.fill(codigoDaAgencia, 4));
 		campo.append(Fillers.ZERO_LEFT.fill(codigoDaConta.intValue(), 5));
 		
 		return calculeDigitoVerificador(campo.toString());

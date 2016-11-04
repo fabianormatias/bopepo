@@ -34,7 +34,7 @@ public class TestBoletoInfoViewHSBCNaoRegistrada {
 	
 	@Test
 	public void deve_retornar_apenas_codigo_do_cliente_no_campo_agencia_codigo_cliente() {
-		boleto.getTitulo().getContaBancaria().setAgencia(new Agencia(1234));
+		boleto.getTitulo().getContaBancaria().setAgencia(new Agencia("1234"));
 		boleto.getTitulo().getContaBancaria().setNumeroDaConta(new NumeroDaConta(1234567, "0"));
 		
 		assertEquals("1234567", view.getTextoFcAgenciaCodigoCedente());

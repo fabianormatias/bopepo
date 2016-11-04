@@ -59,7 +59,7 @@ public class ContaBancariaBuilder {
 		ContaBancaria conta = new ContaBancaria(BancosSuportados.BANCO_BRADESCO.create());
 		conta.setNumeroDaConta(new NumeroDaConta(123456, "0"));
 		conta.setCarteira(new Carteira(30));
-		conta.setAgencia(new Agencia(1234, "1"));
+		conta.setAgencia(new Agencia("1234", "1"));
 		
 		return conta;
 	}	

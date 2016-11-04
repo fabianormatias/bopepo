@@ -61,7 +61,7 @@ public class TestCLBancoSafraCobrancaRegistrada extends AbstractCLBancoSafraBase
 	public void setUp(){
 		
 		titulo.getContaBancaria().setBanco(BancosSuportados.BANCO_SAFRA.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(100, "0"));
+		titulo.getContaBancaria().setAgencia(new Agencia("100", "0"));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(727469,"8"));
 		titulo.getContaBancaria().setCarteira(new Carteira(70, TipoDeCobranca.COM_REGISTRO));
 		titulo.setNossoNumero("960900152");
@@ -92,7 +92,7 @@ public class TestCLBancoSafraCobrancaRegistrada extends AbstractCLBancoSafraBase
 	@Test(expected = CampoLivreException.class)
 	public void seNaoPermiteNumeroDaAgenciaAcimaDe4Digitos() {
 
-		testeSeNaoPermiteNumeroDaAgenciaComDigitosAcimaDoLimite(10000);
+		testeSeNaoPermiteNumeroDaAgenciaComDigitosAcimaDoLimite("10000");
 	}
 
 	@Test(expected = CampoLivreException.class)

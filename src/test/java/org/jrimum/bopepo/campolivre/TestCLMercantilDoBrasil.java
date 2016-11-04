@@ -60,7 +60,7 @@ public class TestCLMercantilDoBrasil extends AbstractCampoLivreBaseTest<CLMercan
 	public void setUp(){
 		
 		titulo.getContaBancaria().setBanco(BancosSuportados.MERCANTIL_DO_BRASIL.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(1234, "1"));
+		titulo.getContaBancaria().setAgencia(new Agencia("1234", "1"));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(123456789));
 		titulo.setNossoNumero("1234567890");
 		titulo.setDigitoDoNossoNumero("5");

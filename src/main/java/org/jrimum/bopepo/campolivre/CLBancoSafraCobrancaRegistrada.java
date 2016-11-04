@@ -170,7 +170,7 @@ class CLBancoSafraCobrancaRegistrada extends AbstractCLBancoSafra {
 	protected void addFields(Titulo titulo) {
 
 		this.add(SISTEMA_CONSTANT_FIELD);
-		this.add(new FixedField<Integer>(titulo.getContaBancaria().getAgencia().getCodigo(), AGENCIA_LENGTH, Fillers.ZERO_LEFT));
+		this.add(new FixedField<String>(titulo.getContaBancaria().getAgencia().getCodigo(), AGENCIA_LENGTH, Fillers.ZERO_LEFT));
 		this.add(new FixedField<String>(titulo.getContaBancaria().getAgencia().getDigitoVerificador(), AGENCIA_DIGITO_LENGTH));
 		this.add(new FixedField<Integer>(titulo.getContaBancaria().getNumeroDaConta().getCodigoDaConta(), CONTA_LENGTH, Fillers.ZERO_LEFT));
 		this.add(new FixedField<String>(titulo.getContaBancaria().getNumeroDaConta().getDigitoDaConta(), CONTA_DIGITO_LENGTH));

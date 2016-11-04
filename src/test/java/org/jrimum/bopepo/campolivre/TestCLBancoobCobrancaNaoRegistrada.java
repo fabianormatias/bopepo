@@ -55,7 +55,7 @@ public class TestCLBancoobCobrancaNaoRegistrada extends AbstractCampoLivreBaseTe
 	public void setUp(){
 
 		titulo.getContaBancaria().setBanco(BancosSuportados.BANCOOB.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(4340));
+		titulo.getContaBancaria().setAgencia(new Agencia("4340"));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(1, "0"));
 		titulo.getContaBancaria().setCarteira(new Carteira(1));
 		titulo.setNossoNumero("0200000");

@@ -107,11 +107,11 @@ class CLUnibancoCobrancaRegistrada extends AbstractCLUnibanco {
 		this.add(new FixedField<String>(CODIGO_TRANSACAO, 2));
 		this.add(new FixedField<Date>(titulo.getDataDoVencimento(), 6, YYMMDD.copy()));
 			
-		if(conta.getAgencia().getCodigo() > 0){
+		if(Integer.parseInt(conta.getAgencia().getCodigo()) > 0){
 			
-			this.add(new FixedField<Integer>(conta.getAgencia().getCodigo(), 4, Fillers.ZERO_LEFT));
+			this.add(new FixedField<String>(conta.getAgencia().getCodigo(), 4, Fillers.ZERO_LEFT));
 			
-		}else{
+		} else {
 			
 			throw new CampoLivreException(new IllegalArgumentException("Agência bancária com valor inválido, a agência deve ser um número inteiro positivo, e não: "+conta.getNumeroDaConta().getCodigoDaConta()));
 		}

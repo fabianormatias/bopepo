@@ -124,7 +124,7 @@ public abstract class AbstractCampoLivreBaseTest <CL extends CampoLivre>{
 	
 	protected final void testeSeNaoPermiteAgenciaComCodigoZero() throws CampoLivreException{
 
-		titulo.getContaBancaria().setAgencia(new Agencia(-0));
+		titulo.getContaBancaria().setAgencia(new Agencia("-0"));
 
 		createCampoLivreToTest();
 
@@ -135,10 +135,10 @@ public abstract class AbstractCampoLivreBaseTest <CL extends CampoLivre>{
 	protected final void testeSeNaoPermiteAgenciaComCodigoNegativo() throws IllegalArgumentException{
 
 		//uma exceção deve ser lançada aqui
-		titulo.getContaBancaria().setAgencia(new Agencia(-1));
+		titulo.getContaBancaria().setAgencia(new Agencia("-1"));
 	}
 	
-	protected final void testeSeNaoPermiteNumeroDaAgenciaComDigitosAcimaDoLimite(int limiteAcima) throws CampoLivreException {
+	protected final void testeSeNaoPermiteNumeroDaAgenciaComDigitosAcimaDoLimite(String limiteAcima) throws CampoLivreException {
 
 		titulo.getContaBancaria().setAgencia(new Agencia(limiteAcima));
 
@@ -150,7 +150,7 @@ public abstract class AbstractCampoLivreBaseTest <CL extends CampoLivre>{
 
 	protected final void testeSeNaoPermiteDigitoDaAgenciaNulo() throws CampoLivreException {
 		
-		titulo.getContaBancaria().setAgencia(new Agencia(1));
+		titulo.getContaBancaria().setAgencia(new Agencia("1"));
 		
 		createCampoLivreToTest();
 		
@@ -160,7 +160,7 @@ public abstract class AbstractCampoLivreBaseTest <CL extends CampoLivre>{
 	
 	protected final void testeSeNaoPermiteDigitoDaAgenciaNaoNumerico() throws CampoLivreException {
 		
-		titulo.getContaBancaria().setAgencia(new Agencia(1,"X"));
+		titulo.getContaBancaria().setAgencia(new Agencia("1","X"));
 		
 		createCampoLivreToTest();
 		

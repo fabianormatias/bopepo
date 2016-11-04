@@ -26,7 +26,7 @@ public class TestCLHSBCCobrancaRegistrada  extends AbstractCampoLivreBaseTest<CL
 		//TODO FAZER TESTE REAL
 
 		titulo.getContaBancaria().setBanco(BancosSuportados.HSBC.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(1234, "1"));
+		titulo.getContaBancaria().setAgencia(new Agencia("1234", "1"));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(8351202,"2"));
 		titulo.getContaBancaria().setCarteira(new Carteira(1, TipoDeCobranca.SEM_REGISTRO));
 		titulo.setNossoNumero("0000239104761");

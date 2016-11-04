@@ -61,7 +61,7 @@ public class TestCLBancoSafraCobrancaNaoRegistrada extends AbstractCLBancoSafraB
 	public void setUp(){
 		
 		titulo.getContaBancaria().setBanco(BancosSuportados.BANCO_SAFRA.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(1730, "0"));
+		titulo.getContaBancaria().setAgencia(new Agencia("1730", "0"));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(12110, "0"));
 		titulo.getContaBancaria().setCarteira(new Carteira(6, TipoDeCobranca.SEM_REGISTRO));
 		titulo.setNossoNumero("12345678901234567");

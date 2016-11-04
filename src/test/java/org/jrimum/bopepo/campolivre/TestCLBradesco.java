@@ -59,7 +59,7 @@ public class TestCLBradesco extends AbstractCampoLivreBaseTest<CLBradesco> {
 	public void setUp(){
 
 		titulo.getContaBancaria().setBanco(BancosSuportados.BANCO_BRADESCO.create());
-		titulo.getContaBancaria().setAgencia(new Agencia(1234, "1"));
+		titulo.getContaBancaria().setAgencia(new Agencia("1234", "1"));
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(6789));
 		titulo.getContaBancaria().setCarteira(new Carteira(5));
 		titulo.setNossoNumero("12345678901");
@@ -90,7 +90,7 @@ public class TestCLBradesco extends AbstractCampoLivreBaseTest<CLBradesco> {
 	@Test(expected = CampoLivreException.class)
 	public void seNaoPermiteNumeroDaAgenciaAcimaDe4Digitos() {
 
-		testeSeNaoPermiteNumeroDaAgenciaComDigitosAcimaDoLimite(10000);
+		testeSeNaoPermiteNumeroDaAgenciaComDigitosAcimaDoLimite("10000");
 	}
 
 	@Test(expected = CampoLivreException.class)
