@@ -58,12 +58,11 @@ public class BoletoInfoCampoNossoNumero {
 			final BancosSuportados banco = BancosSuportados.suportados.get( titulo.getContaBancaria().getBanco().getCodigoDeCompensacaoBACEN().getCodigoFormatado());
 			switch (banco) {
 				case BANCO_ITAU: 
-					texto.append(titulo.getContaBancaria().getCarteira().getCodigo().toString());
+					texto.append(titulo.getContaBancaria().getCarteira().getCodigo().toString() + "/");
 					break;
 				default:
 					break;
 			}
-			texto.append("/");
 		}
 		
 		if (isNotBlank(titulo.getNossoNumero())) {
