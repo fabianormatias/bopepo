@@ -33,6 +33,7 @@ package org.jrimum.bopepo.view.info.campo;
 import static org.apache.commons.lang.StringUtils.EMPTY;
 import static org.apache.commons.lang.StringUtils.isNotBlank;
 
+import org.jrimum.bopepo.BancosSuportados;
 import org.jrimum.domkee.financeiro.banco.febraban.Titulo;
 
 /**
@@ -52,7 +53,19 @@ public class BoletoInfoCampoNossoNumero {
 	public static String getTextoNossoNumero(Titulo titulo) {
 
 		StringBuilder texto = new StringBuilder(EMPTY);
-
+		
+		if (BancosSuportados.isSuportado(titulo.getContaBancaria().getBanco().getCodigoDeCompensacaoBACEN().getCodigoFormatado()) && isNotBlank(titulo.getContaBancaria().getCarteira().getCodigo().toString())) {
+			final BancosSuportados banco = BancosSuportados.suportados.get( titulo.getContaBancaria().getBanco().getCodigoDeCompensacaoBACEN().getCodigoFormatado());
+			switch (banco) {
+				case BANCO_ITAU: 
+					texto.append(titulo.getContaBancaria().getCarteira().getCodigo().toString());
+					break;
+				default:
+					break;
+			}
+			texto.append("/");
+		}
+		
 		if (isNotBlank(titulo.getNossoNumero())) {
 			texto.append(titulo.getNossoNumero());
 

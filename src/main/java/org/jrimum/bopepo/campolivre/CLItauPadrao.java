@@ -217,7 +217,7 @@ class CLItauPadrao extends AbstractCLItau {
 
 		// Carteiras "exceção".
 		Integer[] carteirasEscriturais = {104, 105, 112, 113, 114, 147, 166, 212};
-		Integer[] carteirasModalidadeDireta = {126, 131, 146, 150, 168};
+		Integer[] carteirasModalidadeDireta = {126, 131, 145, 150, 168};
 		
 		StringBuilder campo = new StringBuilder();
 		campo.append(Fillers.ZERO_LEFT.fill(codigoDaCarteira.intValue(), 3));
